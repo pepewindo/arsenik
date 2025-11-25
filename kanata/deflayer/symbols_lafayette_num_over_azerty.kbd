@@ -2,7 +2,7 @@
 
 ;; main symbols layer aliases
 (defalias
-  sym2 (layer-while-held symbolsSft)
+  symSft (layer-while-held symbolsSft)
 
   ;; subscript digits
   ₁ (unicode ₁)
@@ -96,7 +96,7 @@
   @^   @<   @>   @$   @%   XX   @@   @&   @*   @'   @`
   @{   @pl  @pr  @}   @=   XX   @\   @+   @-   @/   @''
   @~   @[   @]   @_   @#   XX   XX   @|   @!   @;   @:   @?
-            @sym2          spc            _
+            @symSft        spc            _         _    _
 )
 
 ;; TODO: on letter rows below, the _ correspond to unimplemented dead
@@ -107,7 +107,7 @@
   _    @≤   @≥   _    @‰   XX   _    XX   @×   _    _
   _    XX   XX   _    @≠   XX   _    @±   _    @÷   _
   _    _    _    @–   XX   XX   XX   @¦   @¬   _    @:   _
-            _              spc            _
+            _              spc            _         _    _
 )
 
 ;; vim: set ft=lisp

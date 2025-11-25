@@ -6,10 +6,7 @@
 )
 
 (defalias
-;;  sym (layer-while-held symbols) ;; defined below with tap-hold
-
   ;; Shift mods
-  sft0 (multi lsft (layer-while-held baseSft))
   sft1 (multi lsft (layer-while-held dk1))
   sft2 (multi lsft (layer-while-held dk2))
   sft3 (multi lsft (layer-while-held dk3))
@@ -104,11 +101,26 @@
   — (fork (unicode —) XX (lsft rsft))
   … (fork (unicode …) XX (lsft rsft))
   • (t! dk-sft · •)
+  ≃ (unicode ≃)
+  ⇐ (unicode ⇐)
+  ⇔ (unicode ⇔)
+  ⇒ (unicode ⇒)
+  ∅ (unicode ∅)
+  ∪ (unicode ∪)
+  ∩ (unicode ∩)
+  ☕(unicode ☕)
+  ⚠ (unicode ⚠)
+  ⮂ (unicode ⮂)
+  ⭠ (unicode ⭠)
+  ⭢ (unicode ⭢)
+  ¼ (unicode ¼)
+  ½ (unicode ½)
+  ¾ (unicode ¾)
 )
 
 ;; Dead key layer 2
 (defalias
-  mark 3
+  mark (unicode r#"""#) ;; "
 
   Ö (t! dk-sft ö Ö)
   Ẅ (t! dk-sft ẅ Ẅ)
@@ -128,28 +140,12 @@
   diaeresis (unicode ¨)
 )
 (deflayer base
-  @b1   @b2   @b3   @b4   @b5   @b6   @b7   @b8   @b9   @b0   @slsh  C-bspc
+  @b1   @b2   @b3   @b4   @b5   @b6   @b7   @b8   @b9   @b0   @slsh C-bspc
   a     c     o     p     z     volu  j     ;     d     @dk   y
   q     @s    @e    @n    f     vold  l     @r    @t    @i    @u
-  w     x     @dash v     b     @slsh mute  @dot  h     g     @com   k
-              @sft              @nav              @sym
+  w     x     @dash v     b     @slsh mute  @dot  h     g     @com  k
+              @sft              @nav              @sym        @sf1  @sf1
 )
-
-(deflayer baseSft
-  _     _     _     _     _     _     _     _     _     _     _    _
-  S-a   S-c   S-o   S-p   S-z   _     S-j   S-;   S-d   @!sft S-y
-  S-q   S-s   S-e   S-n   S-f   _     S-l   S-r   S-t   S-i   S-u
-  S-w   S-x   @?sft S-v   S-b   _     _     @:sft S-h   S-g   @;   S-k
-              _                 @snav             _
-)
-
-;; (deflayer baseSft
-;;   _     _     _     _     _     _     _     _     _     _     _    _
-;;   a     c     o     p     z     _     j     ;     d     @!sft y
-;;   q     s     e     n     f     _     l     r     t     i     u
-;;   w     x     @?sft v     b     _     @:sft h     g     @;sft k
-;;               _                 _                 _
-;; )
 
 ;; Deadkey layers:
 
@@ -158,23 +154,23 @@
   @Â    @Ç    @Œ    @Ô    _     _     _     @µ    @_dk  @dk   @Û
   @À    @É    @È    @Ê    @Ñ    _     @lpar @rpar @Î    @Ï    @Ù
   @Æ    @ẞ    @¿    @–    @—    _     _     @…    XX    XX    @•    XX
-              @sft1             @smark            _
+              @sft1             @smark            _           _     _
 )
 
 (deflayer dk2
   _     _     _     _     _     _     _     _     _     _     _     _
   a     c     @Ö    p     @Ẅ    _     j     ;     d     @dk   @Ÿ
   @Ä    s     @Ë    n     f     _     l     r     @ẗ    @Ï    @Ü
-  w     @Ẍ    @-    v     b     _     _     @.    @Ḧ    g     m     k
-              @sft2             @mark             _
+  z     @Ẍ    @-    v     b     _     _     @.    @Ḧ    g     m     k
+              @sft2             @mark             _           _     _
 )
 
 (deflayer dk3
   _     _     _     _     _     _     _     _     _     _     _     _
-  a     c     o     p     z     _     j     ;     d     @dk   y
-  q     s     e     n     f     _     l     r     t     i     u
-  w     x     @-    v     b     _     _     @.    h     g     m     k
-              @sft3             @diaeresis        _
+  a     @≤    @≥    p     z     _     j     ;     @⚠    @dk   y
+  q     @⇐    @⇔    @⇒    @≠    _     l     r     @t    @∩    @∪
+  @≃    @⭠    @⮂    @⭢    @∅    _     _     @.    @¼    @½    @¾     @☕
+              @sft3             @diaeresis        _           _     _
 )
 
 
@@ -183,12 +179,12 @@
 (defalias
   ;; Main mod-tap: Nav layer when held, Space when tapped.
   nav  (tap-hold $tap_timeout $long_hold_timeout @spce (layer-while-held navigation_azerty))
-  snav (tap-hold $tap_timeout $long_hold_timeout @spce (layer-while-held shiftnavigation))
 
   ;; Space-cadet thumb keys: Shift/BackSpace, AltGr/Enter.
   ;; Acts as a modifier by default, or as BackSpace/Enter when tapped separately.
-  sft (tap-hold-press $tap_timeout $hold_timeout bspc (layer-while-held baseSft))
+  sft (tap-hold-press $tap_timeout $hold_timeout bspc lsft)
   sym (tap-hold-press $tap_timeout $hold_timeout ret (layer-while-held symbols))
+  sf1 (one-shot-press 2000 lsft)
 
   ;; Home-row mods
   s (tap-hold $tap_timeout $long_hold_timeout s  lmet)
@@ -197,12 +193,7 @@
   r (tap-hold $tap_timeout $long_hold_timeout r  lalt)
   t (tap-hold $tap_timeout $long_hold_timeout t  rctl)
   i (tap-hold $tap_timeout $long_hold_timeout i  rmet)
-;;  u (tap-hold $tap_timeout $long_hold_timeout u  (layer-while-held baseSft))
   u (tap-hold $tap_timeout $long_hold_timeout u  rsft)
-
-  ;; Dead key layer
-  ;; dk   (one-shot 2000 (layer-while-held dk_layer))
-  ;; sftdk (one-shot 2000 (layer-while-held sftdk_layer))
 )
 
 ;; vim: set ft=lisp
