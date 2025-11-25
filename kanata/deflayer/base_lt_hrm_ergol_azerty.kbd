@@ -1,0 +1,208 @@
+;; Base layer: layer-taps under the thumbs + home-row mods on SDF and JKL
+;; Emulation of Ergo-L over an Azerty-FR keymap -- main layers
+
+(deftemplate dk-sft (base-action shift-action)
+  (fork (unicode $base-action) (unicode $shift-action) (lsft rsft))
+)
+
+(defalias
+;;  sym (layer-while-held symbols) ;; defined below with tap-hold
+
+  ;; Shift mods
+  sft0 (multi lsft (layer-while-held baseSft))
+  sft1 (multi lsft (layer-while-held dk1))
+  sft2 (multi lsft (layer-while-held dk2))
+  sft3 (multi lsft (layer-while-held dk3))
+
+  ;; dead key (becomes exclamation mark when shifte)
+  dk (fork
+    (tap-dance 5000 (
+      (one-shot-press 5000 (layer-while-held dk1))
+      (one-shot-press 5000 (layer-while-held dk2))
+      (one-shot-press 5000 (layer-while-held dk3))
+    ))
+    (unicode !)
+    (lsft rsft)
+  )
+)
+
+;; Base layer
+(defalias
+  spce (fork spc (unicode  ) (lsft rsft)) ;; space / narrow no-break space
+
+  ;; numbers row
+  acc (t! dk-sft ` ~)
+  b1 (t! dk-sft 1 €)
+  b2 (t! dk-sft 2 «)
+  b3 (t! dk-sft 3 »)
+  b4 (t! dk-sft 4 $)
+  b5 (t! dk-sft 5 %)
+  b6 (t! dk-sft 6 ^)
+  b7 (t! dk-sft 7 &)
+  b8 (t! dk-sft 8 *)
+  b9 (t! dk-sft 9 #)
+  b0 (t! dk-sft 0 @)
+  slsh (t! dk-sft / _)
+  eq (t! dk-sft = +)
+
+  ;; right-hand "extras"
+  brk1 (t! dk-sft [ {)
+  brk2 (t! dk-sft ] })
+  qte (t! dk-sft ' r#"""#)  ;; '  "
+  bksl (t! dk-sft \ |)
+
+  ;; lower row
+  dash (t! dk-sft - ?)
+  dot (t! dk-sft . :)
+  com (t! dk-sft , ;)
+)
+
+;; sft0
+(defalias
+  ?sft (unicode ?)
+  !sft (unicode !)
+  ;sft (unicode ;)
+  :sft (unicode :)
+)
+
+;; Dead key layer 1
+(defalias
+  smark (unicode ’)
+
+  „ (t! dk-sft „ ‚)
+  “ (t! dk-sft “ ‘)
+  ” (t! dk-sft ” ’)
+  ¢ (unicode ¢)
+  ‰ (unicode ‰)
+  § (unicode §)
+  ¶ (unicode ¶)
+  ° (unicode °)
+
+  Â (t! dk-sft â Â)
+  Ç (t! dk-sft ç Ç)
+  Œ (t! dk-sft œ Œ)
+  Ô (t! dk-sft ô Ô)
+  µ (fork (unicode µ) XX (lsft rsft))
+  _dk (unicode _)
+  Û (t! dk-sft û Û)
+
+  À (t! dk-sft à À)
+  É (t! dk-sft é É)
+  È (t! dk-sft è È)
+  Ê (t! dk-sft ê Ê)
+  Ñ (t! dk-sft ñ Ñ)
+  lpar (unicode r#"("#)  ;; (
+  rpar (unicode r#")"#)  ;; )
+  Î (t! dk-sft î Î)
+  Ï (t! dk-sft ï Ï)
+  Ù (t! dk-sft ù Ù)
+
+  Æ (t! dk-sft æ Æ)
+  ẞ (t! dk-sft ß ẞ)
+  ¿ (t! dk-sft ‑ ¿)
+  – (fork (unicode –) XX (lsft rsft))
+  — (fork (unicode —) XX (lsft rsft))
+  … (fork (unicode …) XX (lsft rsft))
+  • (t! dk-sft · •)
+)
+
+;; Dead key layer 2
+(defalias
+  mark 3
+
+  Ö (t! dk-sft ö Ö)
+  Ẅ (t! dk-sft ẅ Ẅ)
+  Ÿ (t! dk-sft ÿ Ÿ)
+
+  Ä (t! dk-sft ä Ä)
+  Ë (t! dk-sft ë Ë)
+  ẗ (fork (unicode ẗ) XX (lsft rsft))
+  Ü (t! dk-sft ü Ü)
+
+  Ẍ (t! dk-sft ẍ Ẍ)
+  Ḧ (t! dk-sft ḧ Ḧ)
+)
+
+;; Dead key layer 3
+(defalias
+  diaeresis (unicode ¨)
+)
+(deflayer base
+  @b1   @b2   @b3   @b4   @b5   @b6   @b7   @b8   @b9   @b0   @slsh  C-bspc
+  a     c     o     p     z     volu  j     ;     d     @dk   y
+  q     @s    @e    @n    f     vold  l     @r    @t    @i    @u
+  w     x     @dash v     b     mute  @dot  h     g     @com  k
+              @sft              @nav              @sym
+)
+
+(deflayer baseSft
+  _     _     _     _     _     _     _     _     _     _     _    _
+  S-a   S-c   S-o   S-p   S-z   _     S-j   S-;   S-d   @!sft S-y
+  S-q   S-s   S-e   S-n   S-f   _     S-l   S-r   S-t   S-i   S-u
+  S-w   S-x   @?sft S-v   S-b   _     @:sft S-h   S-g   @;sft S-k
+              _                 @snav             _
+)
+
+;; (deflayer baseSft
+;;   _     _     _     _     _     _     _     _     _     _     _    _
+;;   a     c     o     p     z     _     j     ;     d     @!sft y
+;;   q     s     e     n     f     _     l     r     t     i     u
+;;   w     x     @?sft v     b     _     @:sft h     g     @;sft k
+;;               _                 _                 _
+;; )
+
+;; Deadkey layers:
+
+(deflayer dk1
+  @„    @“    @”    @¢    @‰    _     _     @§    @¶    @°    _     _
+  @Â    @Ç    @Œ    @Ô    _     _     _     @µ    @_dk  @dk   @Û
+  @À    @É    @È    @Ê    @Ñ    _     @lpar @rpar @Î    @Ï    @Ù
+  @Æ    @ẞ    @¿    @–    @—    _     @…    XX    XX    @•    XX
+              @sft1             @smark            _
+)
+
+(deflayer dk2
+  _     _     _     _     _     _     _     _     _     _     _     _
+  a     c     @Ö    p     @Ẅ    _     j     ;     d     @dk   @Ÿ
+  @Ä    s     @Ë    n     f     _     l     r     @ẗ    @Ï    @Ü
+  w     @Ẍ    @-    v     b     _     @.    @Ḧ    g     m     k
+              @sft2             @mark             _
+)
+
+(deflayer dk3
+  _     _     _     _     _     _     _     _     _     _     _     _
+  a     c     o     p     z     _     j     ;     d     @dk   y
+  q     s     e     n     f     _     l     r     t     i     u
+  w     x     @-    v     b     _     @.    h     g     m     k
+              @sft3             @diaeresis        _
+)
+
+
+;; Timing variables are defined in `kanata.kbd` file.
+
+(defalias
+  ;; Main mod-tap: Nav layer when held, Space when tapped.
+  nav  (tap-hold $tap_timeout $long_hold_timeout @spce (layer-while-held navigation_azerty))
+  snav (tap-hold $tap_timeout $long_hold_timeout @spce (layer-while-held shiftnavigation))
+
+  ;; Space-cadet thumb keys: Shift/BackSpace, AltGr/Enter.
+  ;; Acts as a modifier by default, or as BackSpace/Enter when tapped separately.
+  sft (tap-hold-press $tap_timeout $hold_timeout bspc (layer-while-held baseSft))
+  sym (tap-hold-press $tap_timeout $hold_timeout ret (layer-while-held symbols))
+
+  ;; Home-row mods
+  s (tap-hold $tap_timeout $long_hold_timeout s  lmet)
+  e (tap-hold $tap_timeout $long_hold_timeout e  lctl)
+  n (tap-hold $tap_timeout $long_hold_timeout n  lalt)
+  r (tap-hold $tap_timeout $long_hold_timeout r  lalt)
+  t (tap-hold $tap_timeout $long_hold_timeout t  rctl)
+  i (tap-hold $tap_timeout $long_hold_timeout i  rmet)
+;;  u (tap-hold $tap_timeout $long_hold_timeout u  (layer-while-held baseSft))
+  u (tap-hold $tap_timeout $long_hold_timeout u  rsft)
+
+  ;; Dead key layer
+  ;; dk   (one-shot 2000 (layer-while-held dk_layer))
+  ;; sftdk (one-shot 2000 (layer-while-held sftdk_layer))
+)
+
+;; vim: set ft=lisp
