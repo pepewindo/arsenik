@@ -131,7 +131,7 @@
   @b1   @b2   @b3   @b4   @b5   @b6   @b7   @b8   @b9   @b0   @slsh  C-bspc
   a     c     o     p     z     volu  j     ;     d     @dk   y
   q     @s    @e    @n    f     vold  l     @r    @t    @i    @u
-  w     x     @dash v     b     mute  @dot  h     g     @com  k
+  w     x     @dash v     b     @slsh mute  @dot  h     g     @com   k
               @sft              @nav              @sym
 )
 
@@ -139,7 +139,7 @@
   _     _     _     _     _     _     _     _     _     _     _    _
   S-a   S-c   S-o   S-p   S-z   _     S-j   S-;   S-d   @!sft S-y
   S-q   S-s   S-e   S-n   S-f   _     S-l   S-r   S-t   S-i   S-u
-  S-w   S-x   @?sft S-v   S-b   _     @:sft S-h   S-g   @;sft S-k
+  S-w   S-x   @?sft S-v   S-b   _     _     @:sft S-h   S-g   @;   S-k
               _                 @snav             _
 )
 
@@ -157,7 +157,7 @@
   @„    @“    @”    @¢    @‰    _     _     @§    @¶    @°    _     _
   @Â    @Ç    @Œ    @Ô    _     _     _     @µ    @_dk  @dk   @Û
   @À    @É    @È    @Ê    @Ñ    _     @lpar @rpar @Î    @Ï    @Ù
-  @Æ    @ẞ    @¿    @–    @—    _     @…    XX    XX    @•    XX
+  @Æ    @ẞ    @¿    @–    @—    _     _     @…    XX    XX    @•    XX
               @sft1             @smark            _
 )
 
@@ -165,7 +165,7 @@
   _     _     _     _     _     _     _     _     _     _     _     _
   a     c     @Ö    p     @Ẅ    _     j     ;     d     @dk   @Ÿ
   @Ä    s     @Ë    n     f     _     l     r     @ẗ    @Ï    @Ü
-  w     @Ẍ    @-    v     b     _     @.    @Ḧ    g     m     k
+  w     @Ẍ    @-    v     b     _     _     @.    @Ḧ    g     m     k
               @sft2             @mark             _
 )
 
@@ -173,7 +173,7 @@
   _     _     _     _     _     _     _     _     _     _     _     _
   a     c     o     p     z     _     j     ;     d     @dk   y
   q     s     e     n     f     _     l     r     t     i     u
-  w     x     @-    v     b     _     @.    h     g     m     k
+  w     x     @-    v     b     _     _     @.    h     g     m     k
               @sft3             @diaeresis        _
 )
 
