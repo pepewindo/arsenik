@@ -6,11 +6,6 @@
 )
 
 (defalias
-  ;; Shift mods
-  sft1 (multi lsft (layer-while-held dk1))
-  sft2 (multi lsft (layer-while-held dk2))
-  sft3 (multi lsft (layer-while-held dk3))
-
   ;; dead key (becomes exclamation mark when shifte)
   dk (fork
     (tap-dance 5000 (
@@ -23,35 +18,36 @@
   )
 )
 
+
 ;; Base layer
 (defalias
   spce (fork spc (unicode  ) (lsft rsft)) ;; space / narrow no-break space
 
   ;; numbers row
-  acc (t! dk-sft ` ~)
-  b1 (t! dk-sft 1 €)
-  b2 (t! dk-sft 2 «)
-  b3 (t! dk-sft 3 »)
-  b4 (t! dk-sft 4 $)
-  b5 (t! dk-sft 5 %)
-  b6 (t! dk-sft 6 ^)
-  b7 (t! dk-sft 7 &)
-  b8 (t! dk-sft 8 *)
-  b9 (t! dk-sft 9 #)
-  b0 (t! dk-sft 0 @)
+  acc  (t! dk-sft ` ~)
+  b1   (t! dk-sft 1 €)
+  b2   (t! dk-sft 2 «)
+  b3   (t! dk-sft 3 »)
+  b4   (t! dk-sft 4 $)
+  b5   (t! dk-sft 5 %)
+  b6   (t! dk-sft 6 ^)
+  b7   (t! dk-sft 7 &)
+  b8   (t! dk-sft 8 *)
+  b9   (t! dk-sft 9 #)
+  b0   (t! dk-sft 0 @)
   slsh (t! dk-sft / _)
-  eq (t! dk-sft = +)
+  eq   (t! dk-sft = +)
 
   ;; right-hand "extras"
   brk1 (t! dk-sft [ {)
   brk2 (t! dk-sft ] })
-  qte (t! dk-sft ' r#"""#)  ;; '  "
+  qte  (t! dk-sft ' r#"""#)  ;; '  "
   bksl (t! dk-sft \ |)
 
   ;; lower row
   dash (t! dk-sft - ?)
-  dot (t! dk-sft . :)
-  com (t! dk-sft , ;)
+  dot  (t! dk-sft . :)
+  com  (t! dk-sft , ;)
 )
 
 ;; sft0
@@ -101,21 +97,6 @@
   — (fork (unicode —) XX (lsft rsft))
   … (fork (unicode …) XX (lsft rsft))
   • (t! dk-sft · •)
-  ≃ (unicode ≃)
-  ⇐ (unicode ⇐)
-  ⇔ (unicode ⇔)
-  ⇒ (unicode ⇒)
-  ∅ (unicode ∅)
-  ∪ (unicode ∪)
-  ∩ (unicode ∩)
-  ☕(unicode ☕)
-  ⚠ (unicode ⚠)
-  ⮂ (unicode ⮂)
-  ⭠ (unicode ⭠)
-  ⭢ (unicode ⭢)
-  ¼ (unicode ¼)
-  ½ (unicode ½)
-  ¾ (unicode ¾)
 )
 
 ;; Dead key layer 2
@@ -138,15 +119,48 @@
 ;; Dead key layer 3
 (defalias
   diaeresis (unicode ¨)
+  ≃ (unicode ≃)
+  ⇐ (unicode ⇐)
+  ⇔ (unicode ⇔)
+  ⇒ (unicode ⇒)
+  ∅ (unicode ∅)
+  ∪ (unicode ∪)
+  ∩ (unicode ∩)
+  ☕(unicode ☕)
+  ⚠ (unicode ⚠)
+  🚀 (unicode 🚀)
+  👍 (unicode 👍)
+  😎 (unicode 😎)
+  😲 (unicode 😲)
+  🙏 (unicode 🙏)
+  👋 (unicode 👋)
+  🤞 (unicode 🤞)
+  🙊 (unicode 🙊)
+  😂 (unicode 😂)
+  😉 (unicode 😉)
+  ⮂ (unicode ⮂)
+  ⭠ (unicode ⭠)
+  ⭢ (unicode ⭢)
+  ¼ (unicode ¼)
+  ½ (unicode ½)
+  ¾ (unicode ¾)
 )
+
 (deflayer base
   @b1   @b2   @b3   @b4   @b5   @b6   @b7   @b8   @b9   @b0   @slsh C-bspc
   a     c     o     p     z     volu  j     ;     d     @dk   y
   q     @s    @e    @n    f     vold  l     @r    @t    @i    @u
   w     x     @dash v     b     @slsh mute  @dot  h     g     @com  k
-              @sft              @nav              @sym        @sf1  @sf1
+        @met  @sft              @nav              @sym        @sf1  @sf1
 )
 
+(deflayer baseMet
+  M-1   M-2   M-3   M-4   M-5   M-6   M-7   M-8   M-9   M-0    _    _
+  _     _     _     _     _     _     _     _     _     _      _
+  _     _     _     _     _     _     _     _     _     _      _
+  _     _     _     _     _     _     _     _     _     _      _    _
+        _     _                 _                 _            _    _
+)
 ;; Deadkey layers:
 
 (deflayer dk1
@@ -154,7 +168,7 @@
   @Â    @Ç    @Œ    @Ô    _     _     _     @µ    @_dk  @dk   @Û
   @À    @É    @È    @Ê    @Ñ    _     @lpar @rpar @Î    @Ï    @Ù
   @Æ    @ẞ    @¿    @–    @—    _     _     @…    XX    XX    @•    XX
-              @sft1             @smark            _           _     _
+        _     @sft1             @smark            _           _     _
 )
 
 (deflayer dk2
@@ -162,15 +176,15 @@
   a     c     @Ö    p     @Ẅ    _     j     ;     d     @dk   @Ÿ
   @Ä    s     @Ë    n     f     _     l     r     @ẗ    @Ï    @Ü
   z     @Ẍ    @-    v     b     _     _     @.    @Ḧ    g     m     k
-              @sft2             @mark             _           _     _
+        _     @sft2             @mark             _           _     _
 )
 
 (deflayer dk3
   _     _     _     _     _     _     _     _     _     _     _     _
-  a     @≤    @≥    p     z     _     j     ;     @⚠    @dk   y
-  q     @⇐    @⇔    @⇒    @≠    _     l     r     @t    @∩    @∪
-  @≃    @⭠    @⮂    @⭢    @∅    _     _     @.    @¼    @½    @¾     @☕
-              @sft3             @diaeresis        _           _     _
+  @🙊   @😎   @😲   @👍   @🤞   _     @😉   @🙏   @⚠    @dk   y
+  q     @⇐    @⇔    @⇒    @≠    _     @😂   @🚀   @👍   @∩    @∪
+  @≃    @⭠    @⮂    @⭢    @∅    _     _     @👋   @¼    @½    @¾    @☕
+        _     @sft3             @diaeresis        _           _     _
 )
 
 
@@ -184,15 +198,26 @@
   ;; Acts as a modifier by default, or as BackSpace/Enter when tapped separately.
   sft (tap-hold-press $tap_timeout $hold_timeout bspc lsft)
   sym (tap-hold-press $tap_timeout $hold_timeout ret (layer-while-held symbols))
-  sf1 (one-shot-press 2000 lsft)
+  
+  ;; Shift mods
+  sf1 (tap-dance 2000 ((one-shot-press 2000 lsft)
+                         (caps-word 2000)) )
+
+  sft1 (multi lsft (layer-while-held dk1))
+  sft2 (multi lsft (layer-while-held dk2))
+  sft3 (multi lsft (layer-while-held dk3))
+
+  ;; Meta for application launch shortcut
+  met (multi lmet (layer-while-held baseMet))
+
 
   ;; Home-row mods
-  s (tap-hold $tap_timeout $long_hold_timeout s  lmet)
+  s (tap-hold $tap_timeout $long_hold_timeout s  @met)
   e (tap-hold $tap_timeout $long_hold_timeout e  lctl)
   n (tap-hold $tap_timeout $long_hold_timeout n  lalt)
   r (tap-hold $tap_timeout $long_hold_timeout r  lalt)
   t (tap-hold $tap_timeout $long_hold_timeout t  rctl)
-  i (tap-hold $tap_timeout $long_hold_timeout i  rmet)
+  i (tap-hold $tap_timeout $long_hold_timeout i  @met)
   u (tap-hold $tap_timeout $long_hold_timeout u  rsft)
 )
 

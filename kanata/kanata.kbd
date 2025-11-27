@@ -22,6 +22,19 @@
 )
 
 ;;-----------------------------------------------------------------------------
+;; Aliases for `Symbols` and `Navigation` layers
+;; Depends on PC/Mac and keyboard layout
+
+;; (include defalias/ergol_pc.kbd)  ;; Ergo‑L PC
+;; (include defalias/qwerty-lafayette_pc.kbd)  ;; Qwerty‑Lafayette PC
+;; (include defalias/qwerty_pc.kbd)  ;; Qwerty / Colemak PC
+;; (include defalias/qwerty_mac.kbd)  ;; Qwerty / Colemak Mac
+(include defalias/azerty_pc.kbd)  ;; Azerty PC
+;; (include defalias/qwertz_pc.kbd)  ;; Qwertz PC
+;; (include defalias/bepo_pc.kbd)  ;; Bépo PC
+;; (include defalias/optimot_pc.kbd)  ;; Optimot PC
+
+;;-----------------------------------------------------------------------------
 ;; Original key arrangement on your keyboard: Mac or PC.
 ;; Choose here if you want to add an angle mod: ZXCVB are shifted to the left.
 ;; See https://colemakmods.github.io/ergonomic-mods/angle.html for more details.
@@ -69,19 +82,6 @@
 ;; (defalias run M-p)  ;; [Command]-[P]
 (defalias run XX)  ;; do nothing
 
-
-;;-----------------------------------------------------------------------------
-;; Aliases for `Symbols` and `Navigation` layers
-;; Depends on PC/Mac and keyboard layout
-
-;; (include defalias/ergol_pc.kbd)  ;; Ergo‑L PC
-;; (include defalias/qwerty-lafayette_pc.kbd)  ;; Qwerty‑Lafayette PC
-;; (include defalias/qwerty_pc.kbd)  ;; Qwerty / Colemak PC
-;; (include defalias/qwerty_mac.kbd)  ;; Qwerty / Colemak Mac
-(include defalias/azerty_pc.kbd)  ;; Azerty PC
-;; (include defalias/qwertz_pc.kbd)  ;; Qwertz PC
-;; (include defalias/bepo_pc.kbd)  ;; Bépo PC
-;; (include defalias/optimot_pc.kbd)  ;; Optimot PC
 
 ;;-----------------------------------------------------------------------------
 ;; Extra configuration

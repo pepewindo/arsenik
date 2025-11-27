@@ -96,7 +96,7 @@
   @^   @<   @>   @$   @%   XX   @@   @&   @*   @'   @`
   @{   @pl  @pr  @}   @=   XX   @\   @+   @-   @/   @''
   @~   @[   @]   @_   @#   XX   XX   @|   @!   @;   @:   @?
-            @symSft        spc            _         _    _
+       _    @symSft        spc            _         _    _
 )
 
 ;; TODO: on letter rows below, the _ correspond to unimplemented dead
@@ -107,7 +107,7 @@
   _    @≤   @≥   _    @‰   XX   _    XX   @×   _    _
   _    XX   XX   _    @≠   XX   _    @±   _    @÷   _
   _    _    _    @–   XX   XX   XX   @¦   @¬   _    @:   _
-            _              spc            _         _    _
+       _    _              spc            _         _    _
 )
 
 ;; vim: set ft=lisp
