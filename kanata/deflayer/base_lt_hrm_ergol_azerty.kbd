@@ -146,6 +146,12 @@
   ¾ (unicode ¾)
 )
 
+
+(defchordsv2
+	(s    d    f)  esc 40 first-release (baseMet)
+	(k    l    ;)  esc 40 first-release (baseMet)
+)
+
 (deflayer base
   @b1   @b2   @b3   @b4   @b5   @b6   @b7   @b8   @b9   @b0   @slsh C-bspc
   a     c     o     p     z     volu  j     ;     d     @dk   y
@@ -161,6 +167,7 @@
   _     _     _     _     _     _     _     _     _     _      _    _
         _     _                 _                 _            _    _
 )
+
 ;; Deadkey layers:
 
 (deflayer dk1
