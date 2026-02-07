@@ -1,0 +1,82 @@
+;; Symbol layers: Lafayette/Ergo‑L AltGr programmation layer
+
+;; main symbols layer aliases
+(defalias
+  ;; subscript digits
+  ₁ (unicode ₁)
+  ₂ (unicode ₂)
+  ₃ (unicode ₃)
+  ₄ (unicode ₄)
+  ₅ (unicode ₅)
+  ₆ (unicode ₆)
+  ₇ (unicode ₇)
+  ₈ (unicode ₈)
+  ₉ (unicode ₉)
+  ₀ (unicode ₀)
+)
+
+;; shifted symbols layer aliases
+(defalias
+  ;; superscript digits
+  ¹ (unicode ¹)
+  ² (unicode ²)
+  ³ (unicode ³)
+  ⁴ (unicode ⁴)
+  ⁵ (unicode ⁵)
+  ⁶ (unicode ⁶)
+  ⁷ (unicode ⁷)
+  ⁸ (unicode ⁸)
+  ⁹ (unicode ⁹)
+  ⁰ (unicode ⁰)
+
+  ;; TODO: dead ^
+  ≤ (unicode ≤)
+  ≥ (unicode ≥)
+  ;; TODO: dead ¤
+  ;; TODO: dead ˚
+  × (unicode ×)
+  ;; TODO: dead '
+  ;; TODO: dead `
+
+  ;; TODO: dead ˇ
+  ;; TODO: dead ˙
+  ≠ (unicode ≠)
+  ;; TODO: dead /
+  ± (unicode ±)
+  ;; TODO: dead ˉ
+  ÷ (unicode ÷)
+  ;; TODO: dead ˝
+
+  ;; TODO: dead ~
+  ;; TODO: dead ,
+  ;; TODO: dead ˛
+  ¦ (unicode ¦)
+  ¬ (unicode ¬)
+  ;; TODO: dead ¸
+  ;; TODO: dead ˘
+)
+
+(deflayer symbols
+  @₁   @₂   @₃   @₄   @₅   @₆   @₇   @₈   @₉   @₀   XX   XX
+  @^   @<   @>   @$   @%   XX   @@   @&   @*   @'   @`
+  @{   @pl  @pr  @}   @=   XX   @\   @+   @-   @/   @''
+  @~   @[   @]   @_   @#   XX   XX   @|   @!   @;   @:   @?
+       _    @symSft        spc            _         _    _
+)
+
+;; TODO: on letter rows below, the _ correspond to unimplemented dead
+;;       keys (see above to dos). XX are where keys are actually not
+;;       supposed to have any effect.
+(deflayer symbolsSft
+  @¹   @²   @³   @⁴   @⁵   @⁶   @⁷   @⁸   @⁹   @⁰   XX   XX
+  _    @≤   @≥   _    @‰   XX   _    XX   @×   _    _
+  _    XX   XX   _    @≠   XX   _    @±   _    @÷   _
+  _    _    _    @–   XX   XX   XX   @¦   @¬   _    @:   _
+       _    _              spc            _         _    _
+)
+
+(defalias
+  symSft (layer-while-held symbolsSft)
+)
+
+;; vim: set ft=lisp

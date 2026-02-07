@@ -51,6 +51,7 @@
   /  /
   '' S-'
 
+  €  AG-5
   ~  S-`
   [  [
   ]  ]
@@ -58,9 +59,11 @@
   #  S-3
   |  S-\
   !  S-1
-  ;  ;
   :  S-;
+  ; (unicode ;)
   ?  S-/
+  « (unicode «)
+  » (unicode »)
 )
 
 ;; NumRow layer
