@@ -148,8 +148,8 @@
 
 
 (defchordsv2
-	(s    d    f)  esc 40 first-release (baseMet)
-	(k    l    ;)  esc 40 first-release (baseMet)
+	(s    d)  esc 20 first-release ()
+	(l    ;)  esc 20 first-release ()
 )
 
 (deflayer base
@@ -161,11 +161,11 @@
 )
 
 (deflayer baseMet
-  M-1   M-2   M-3   M-4   M-5   M-6   M-7   M-8   M-9   M-0    _    _
-  _     _     _     _     _     _     _     _     _     _      _
-  _     _     _     _     _     _     _     _     _     _      _
-  _     _     _     _     _     _     _     _     _     _      _    _
-        _     _                 _                 _            _    _
+  M-1   M-2   M-3   M-4   M-5   M-6   M-7   M-8   M-9   M-0   _    _
+  _     _     _     _     _     _     _     M-7   M-8   M-9   _
+  _     _     _     _     _     _     _     M-4   M-5   M-6   _
+  _     _     _     _     _     _     _     _     M-1   M-2   M-3  _
+        _     _                 _                 _           _    _
 )
 
 ;; Deadkey layers:
