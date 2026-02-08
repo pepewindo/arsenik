@@ -51,9 +51,9 @@
   /  /
   '' S-'
 
-  €  AG-5
+  €  (unicode €)
   ~  S-`
-  [  [
+  [  (unicode [)
   ]  ]
   _  S--
   #  S-3
@@ -79,7 +79,8 @@
   s7 S-7
   s8 S-8
   s9 S-9
-  nbs spc ;; no narrow no-break space in Qwerty
+;;  nbs spc ;; no narrow no-break space in Qwerty
+  nbs (unicode U+202F)
 
   dk1 XX
   dk2 XX

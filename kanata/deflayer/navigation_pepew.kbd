@@ -8,7 +8,7 @@
 
 (deflayer navigation
   F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   lrld
-  caps  home  up    end   pgup  XX    @-    @7    @8    @9    @/
+  caps  home  up    end   pgup  XX    @-    @7    @8    @9    @/    _
   tab   lft   down  rght  pgdn  XX    @+    @4    @5    @6    @0
   bck   prtsc esc   ins   fwd   XX    XX    @.    @1    @2    @3    @,
         _     _                 _                 del         _     _
@@ -16,7 +16,7 @@
 
 (deflayer navigation_qwerty
   F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   lrld
-  caps  home  up    end   pgup  XX    @-    @b7   @b8   @b9   @/
+  caps  home  up    end   pgup  XX    @-    @b7   @b8   @b9   @/    _
   tab   lft   down  rght  pgdn  XX    @+    @b4   @b5   @b6   @b0
   bck   prtsc esc   ins   fwd   XX    XX    @.    @b1   @b2   @b3   @,
         _     _                 _                 del         _     _
@@ -24,7 +24,7 @@
 
 (deflayer shiftnavigation
   F1    F2     F3     F4     F5      F6   F7   F8   F9   F10  F11   lrld
-  caps  S-home S-up   S-end  S-pgup  XX   @-   @&   @*   @#   @/
+  caps  S-home S-up   S-end  S-pgup  XX   @-   @&   @*   @#   @/    _
   S-tab S-lft  S-down S-rght S-pgdn  XX   @+   @$   @%   @^   @@
   bck   prtsc  esc    S-ins  fwd     XX   XX   @.   @€   @«   @»    @,
         _      _                     _              S-del     _     _

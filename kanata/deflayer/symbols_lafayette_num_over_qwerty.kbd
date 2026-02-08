@@ -41,6 +41,9 @@
   ;; TODO: dead ˇ
   ;; TODO: dead ˙
   ≠ (unicode ≠)
+
+  £ (unicode £)
+  ¥ (unicode ¥)
   ;; TODO: dead /
   ± (unicode ±)
   ;; TODO: dead ˉ
@@ -58,7 +61,7 @@
 
 (deflayer symbols
   @₁   @₂   @₃   @₄   @₅   @₆   @₇   @₈   @₉   @₀   XX   XX
-  @^   @<   @>   @$   @%   XX   @@   @&   @*   @'   @`
+  @^   @<   @>   @$   @%   XX   @@   @&   @*   @'   @`   XX
   @{   @pl  @pr  @}   @=   XX   @\   @+   @-   @/   @''
   @~   @[   @]   @_   @#   XX   XX   @|   @!   @;   @:   @?
        _    @symSft        spc            _         _    _
@@ -69,9 +72,9 @@
 ;;       supposed to have any effect.
 (deflayer symbolsSft
   @¹   @²   @³   @⁴   @⁵   @⁶   @⁷   @⁸   @⁹   @⁰   XX   XX
-  _    @≤   @≥   _    @‰   XX   _    XX   @×   _    _
-  _    XX   XX   _    @≠   XX   _    @±   _    @÷   _
-  _    _    _    @–   XX   XX   XX   @¦   @¬   _    @:   _
+  _    @≤   @≥   _    @‰   XX   _    XX   @×   _    @¥   XX
+  _    @$   @€   _    @≠   XX   @£   @±   _    @÷   @°
+  @≃   _    @–   @∅   XX   XX   XX   @¦   @¬   @;   @:   _
        _    _              spc            _         _    _
 )
 

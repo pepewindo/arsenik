@@ -5,10 +5,6 @@
   (fork (unicode $base-action) (unicode $shift-action) (lsft rsft))
 )
 
-(deftemplate eg-sft (base-action shift-action)
-  (fork $base-action $shift-action (lsft rsft))
-)
-
 (defalias
   ;; dead key (becomes exclamation mark when shifte)
   dk (fork
@@ -43,12 +39,16 @@
   eq   (t! dk-sft = +)
 )
 
-;; sft0
+(defalias
+  ;; higher row
+  brk (t! dk-sft ] [)
+)
+
 (defalias
   ;; lower row
-  dash (t! eg-sft - @?)
-  dot  (t! eg-sft . @:)
-  com  (t! eg-sft , @;)
+  dash  (t! dk-sft - ?)
+  dot   (t! dk-sft . :)
+  com   (t! dk-sft , ;)
 )
 
 
@@ -147,7 +147,7 @@
 
 (deflayer base
   @b1   @b2   @b3   @b4   @b5   @b6   @b7   @b8   @b9   @b0   @slsh C-bspc
-  q     c     o     p     w     volu  j     m     d     @dk   y
+  q     c     o     p     w     volu  j     m     d     @dk   y     @brk
   a     @s    @e    @n    f     vold  l     @r    @t    @i    @u
   z     x     @dash v     b     @slsh mute  @dot  h     g     @com  k
         @met  @sft              @nav              @sym        @sf1  @sf1
@@ -155,7 +155,7 @@
 
 (deflayer baseMet
   M-1   M-2   M-3   M-4   M-5   M-6   M-7   M-8   M-9   M-0   _    _
-  _     _     _     _     _     _     _     M-7   M-8   M-9   _
+  _     _     _     _     _     _     _     M-7   M-8   M-9   _    _
   _     _     _     _     _     _     _     M-4   M-5   M-6   _
   _     _     _     _     _     _     _     _     M-1   M-2   M-3  _
         _     _                 _                 _           _    _
@@ -165,7 +165,7 @@
 
 (deflayer dk1
   @„    @“    @”    @¢    @‰    _     _     @§    @¶    @°    _     _
-  @Â    @Ç    @Œ    @Ô    _     _     _     @µ    @_dk  @dk   @Û
+  @Â    @Ç    @Œ    @Ô    _     _     _     @µ    @_dk  @dk   @Û    _
   @À    @É    @È    @Ê    @Ñ    _     @lpar @rpar @Î    @Ï    @Ù
   @Æ    @ẞ    @¿    @–    @—    _     _     @…    XX    XX    @•    XX
         _     @sft1             @smark            _           _     _
@@ -173,7 +173,7 @@
 
 (deflayer dk2
   _     _     _     _     _     _     _     _     _     _     _     _
-  a     c     @Ö    p     @Ẅ    _     j     m     d     @dk   @Ÿ
+  a     c     @Ö    p     @Ẅ    _     j     m     d     @dk   @Ÿ    _
   @Ä    s     @Ë    n     f     _     l     r     @ẗ    @Ï    @Ü
   z     @Ẍ    @-    v     b     _     _     @.    @Ḧ    g     m     k
         _     @sft2             @mark             _           _     _
@@ -181,7 +181,7 @@
 
 (deflayer dk3
   _     _     _     _     _     _     _     _     _     _     _     _
-  @🙊   @😎   @😲   @👍   @🤞   _     @😉   @🙏   @⚠    @dk   y
+  @🙊   @😎   @😲   @👍   @🤞   _     @😉   @🙏   @⚠    @dk   y     _
   q     @⇐    @⇔    @⇒    @≠    _     @😂   @🚀   @👍   @∩    @∪
   @≃    @⭠    @⮂    @⭢    @∅    _     _     @👋   @¼    @½    @¾    @☕
         _     @sft3             @diaeresis        _           _     _
