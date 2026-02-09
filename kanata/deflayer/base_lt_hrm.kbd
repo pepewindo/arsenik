@@ -1,11 +1,15 @@
-;; Base layer: layer-taps under the thumbs + home-row mods on SDF and JKL
+(defchordsv2
+  (s   d)  esc 30 first-release ()
+  (l   ;)  esc 30 first-release ()
+)
 
+;; Base layer: layer-taps under the thumbs + home-row mods on SDF and JKL
 (deflayer base
-  _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _ C-bspc  _    _    _    _    _
   q    w    e    r    t         y    u    i    o    p
-  a    @ss  @dd  @ff  g         h    @jj  @kk  @ll  ;
+  a    @ss  @dd  @ff  g         h    @jj  @kk  @ll  @sh
   z    x    c    v    b    <    n    m    ,    .    /
-            @sft          @nav            @sym
+            @sft          @nav            @sym      @osm
 )
 
 ;; Timing variables are defined in `kanata.kbd` file.
@@ -19,12 +23,17 @@
   sft (tap-hold-press $tap_timeout $hold_timeout bspc lsft)
   sym (tap-hold-press $tap_timeout $hold_timeout ret (layer-while-held symbols))
 
+  ;; Shift mods
+  osm (tap-dance 2000 ((one-shot-press 2000 lsft)
+                        (caps-word 2000)) )
+
   ;; Home-row mods
   ss (tap-hold $tap_timeout $long_hold_timeout s lmet)
   dd (tap-hold $tap_timeout $long_hold_timeout d lctl)
   ff (tap-hold $tap_timeout $long_hold_timeout f lalt)
   jj (tap-hold $tap_timeout $long_hold_timeout j lalt)
   kk (tap-hold $tap_timeout $long_hold_timeout k rctl)
+  sh (tap-hold $tap_timeout $long_hold_timeout ; lsft)
   ll (tap-hold $tap_timeout $long_hold_timeout l rmet)
 )
 
