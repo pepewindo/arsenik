@@ -138,6 +138,8 @@
   🙊 (unicode 🙊)
   😂 (unicode 😂)
   😉 (unicode 😉)
+  😱 (unicode 😱)
+  😢 (unicode 😢)
   ⮂ (unicode ⮂)
   ⭠ (unicode ⭠)
   ⭢ (unicode ⭢)
@@ -148,8 +150,9 @@
 
 
 (defchordsv2
-	(s    d)  esc 20 first-release ()
-	(l    ;)  esc 20 first-release ()
+	(w     e)  esc 20 first-release ()
+	(o     p)  esc 20 first-release ()
+	(k  l  ;)  ret 60 first-release ()
 )
 
 (deflayer base
@@ -188,8 +191,8 @@
 
 (deflayer dk3
   _     _     _     _     _     _     _     _     _     _     _     _
-  @🙊   @😎   @😲   @👍   @🤞   _     @😉   @🙏   @⚠    @dk   y
-  q     @⇐    @⇔    @⇒    @≠    _     @😂   @🚀   @👍   @∩    @∪
+  @🙊   @😎   @😲   @👍   @🤞   _     @😉   @🙏   @⚠    @dk   @😢
+  @😱   @⇐    @⇔    @⇒    @≠    _     @😂   @🚀   @👍   @∩    @∪
   @≃    @⭠    @⮂    @⭢    @∅    _     _     @👋   @¼    @½    @¾    @☕
         _     @sft3             @diaeresis        _           _     _
 )
@@ -198,17 +201,23 @@
 ;; Timing variables are defined in `kanata.kbd` file.
 
 (defalias
+  cw  (caps-word 2000)
+  cwc (caps-word-custom
+       2000
+      (; a b c d e f g h i j k l m n o p q r s t u v w x y z)
+      (bspc del up down left rght)
+  )
   ;; Main mod-tap: Nav layer when held, Space when tapped.
   nav  (tap-hold $tap_timeout $long_hold_timeout @spce (layer-while-held navigation_azerty))
 
   ;; Space-cadet thumb keys: Shift/BackSpace, AltGr/Enter.
   ;; Acts as a modifier by default, or as BackSpace/Enter when tapped separately.
   sft (tap-hold-press $tap_timeout $hold_timeout bspc lsft)
-  sym (tap-hold-press $tap_timeout $hold_timeout ret (layer-while-held symbols))
+  sym (one-shot-press $long_tap_timeout (layer-while-held symbols))
   
   ;; Shift mods
   sf1 (tap-dance 2000 ((one-shot-press 2000 lsft)
-                         (caps-word 2000)) )
+                         @cwc) )
 
   sft1 (multi lsft (layer-while-held dk1))
   sft2 (multi lsft (layer-while-held dk2))

@@ -96,7 +96,7 @@
   @^   @<   @>   @$   @%   XX   @@   @&   @*   @'   @`
   @{   @pl  @pr  @}   @=   XX   @\   @+   @-   @/   @''
   @~   @[   @]   @_   @#   XX   XX   @|   @!   @;   @:   @?
-       _    @symSft        spc            _         _    _
+       _    @symSft        spc            ret       _    _
 )
 
 ;; TODO: on letter rows below, the _ correspond to unimplemented dead
