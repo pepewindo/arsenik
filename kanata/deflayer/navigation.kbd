@@ -11,7 +11,7 @@
   caps home up   end  pgup      @-   @7   @8   @9   @/
   tab  lft  down rght pgdn      @+   @4   @5   @6   @0
   bck  prtsc esc ins  fwd   _   @.   @1   @2   @3   @,
-            @func           _             del       @0
+            @func           _        del  @0   @0
 )
 
 (deflayer funckeys
@@ -19,7 +19,7 @@
   _    _    _    _    _         _    F7   F8   F9   F10
   _    lsft lmet lctl lalt      _    F4   F5   F6   F11
   _    _    _    _    _    _    _    F1   F2   F3   F12
-            _              _              _         _
+            _              _         _    _    _
 )
 
 (defalias

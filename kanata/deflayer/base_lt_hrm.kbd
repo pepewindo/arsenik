@@ -1,6 +1,6 @@
 (defchordsv2
-  (s   d)  esc 30 first-release ()
-  (l   ;)  esc 30 first-release ()
+  (w   e)  esc 30 first-release ()
+  (o   p)  ret 30 first-release ()
 )
 
 ;; Base layer: layer-taps under the thumbs + home-row mods on SDF and JKL
@@ -9,23 +9,34 @@
   q    w    e    r    t         y    u    i    o    p
   a    @ss  @dd  @ff  g         h    @jj  @kk  @ll  @sh
   z    x    c    v    b    <    n    m    ,    .    /
-            @sft          @nav            @sym      @osm
+            @sft          @nav       @sym @osm @osm
 )
 
 ;; Timing variables are defined in `kanata.kbd` file.
 
 (defalias
+  cw (caps-word 2000)
+
+  ;; This example is similar to the default caps-word behaviour but it moves the
+  ;; `O` (Ergo-L dead key) and `;` (Ergo-L U) keys to the capitalized key list
+  ;; from the extra non-terminating key list.
+  cwc (caps-word-custom
+       2000
+       (; , / a b d e f g h i j k l m p q r s t u v w x y z)
+       (o c m ; , / bspc del up down left rght)
+  )
+    
   ;; Main mod-tap: Nav layer when held, Space when tapped.
   nav (tap-hold $tap_timeout $long_hold_timeout spc (layer-while-held navigation))
 
   ;; Space-cadet thumb keys: Shift/BackSpace, AltGr/Enter.
   ;; Acts as a modifier by default, or as BackSpace/Enter when tapped separately.
   sft (tap-hold-press $tap_timeout $hold_timeout bspc lsft)
-  sym (tap-hold-press $tap_timeout $hold_timeout ret (layer-while-held symbols))
+  sym (one-shot-press $long_tap_timeout (layer-while-held symbols))
 
   ;; Shift mods
-  osm (tap-dance 2000 ((one-shot-press 2000 lsft)
-                        (caps-word 2000)) )
+  osm (tap-dance 2000 ( (one-shot-press 2000 lsft)
+                         @cwc) )
 
   ;; Home-row mods
   ss (tap-hold $tap_timeout $long_hold_timeout s lmet)
