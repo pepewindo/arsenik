@@ -151,8 +151,7 @@
 
 (defchordsv2
 	(w     e)  esc 20 first-release ()
-	(o     p)  esc 20 first-release ()
-	(k  l  ;)  ret 60 first-release ()
+	(o     p)  ret 30 first-release ()
 )
 
 (deflayer base
