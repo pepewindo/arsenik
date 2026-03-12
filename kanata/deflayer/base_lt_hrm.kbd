@@ -1,6 +1,6 @@
 (defchordsv2
-  (w   e)  esc 30 first-release ()
-  (o   p)  ret 30 first-release ()
+  (w   e)  esc 10 first-release ()
+  (o   p)  ret 20 first-release ()
 )
 
 ;; Base layer: layer-taps under the thumbs + home-row mods on SDF and JKL
