@@ -8,21 +8,44 @@
 
 (deflayer navigation
   M-1  M-2  M-3  M-4  M-5  lrld M-6  M-7  M-8  M-9  M-0
-  caps home up   end  pgup      @-   @7   @8   @9   @/
+  caps home up   end  pgup      @-   @7   @8   @9   @*
   tab  lft  down rght pgdn      @+   @4   @5   @6   @0
   bck  prtsc esc ins  fwd   _   @.   @1   @2   @3   @,
-            @func           _        del  @0   @0
+            @func           _        del  @/   @/
 )
 
 (deflayer funckeys
   _    _    _    _    _   lrld  _    _    _    _    _
-  _    _    _    _    _         _    F7   F8   F9   F10
+  @kz- @kz+ vold volu mute      _    F7   F8   F9   F10
   lsft lmet lctl lalt _         _    F4   F5   F6   F11
-  _    _    _    _    _    _    _    F1   F2   F3   F12
-            _              _         _    _    _
+  @ndo @cut @cpy @pst _    _    _    F1   F2   F3   F12
+            _              _         @mou @mou @mou
+)
+
+(deflayer mousectl
+  _    _    _    _    _   lrld  _    _    _    _    _
+  XX   XX   @mwu XX   XX        XX   mltp @mau mrtp XX
+  XX   @mwl @mwd @mwr XX        XX   @mal @mad @mar mlft
+  XX   @slw @med @fst XX   _    XX   mltp mmtp mrtp XX
+            _              mlft      _    _    _
 )
 
 (defalias
 	func (layer-toggle funckeys)
+	kz- C-S-kp- ;; kitty zoom out
+	kz+ C-S-=   ;; kitty zoom in
+
+	;; mou (layer-toggle mousectl) ;; definet in base_lt_hrm.kbd
+	mwu (mwheel-up    50 120)
+	mwd (mwheel-down  50 120)
+	mwl (mwheel-left  50 120)
+	mwr (mwheel-right 50 120)
+	mau (movemouse-accel-up    4 500 1 10)
+	mad (movemouse-accel-down  4 500 1 10)
+	mal (movemouse-accel-left  4 500 1 10)
+	mar (movemouse-accel-right 4 500 1 10)
+	slw (movemouse-speed 10)
+	med (movemouse-speed 50)
+	fst (movemouse-speed 200)
 )
 ;; vim: set ft=lisp

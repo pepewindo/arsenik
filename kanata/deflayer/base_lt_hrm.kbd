@@ -15,6 +15,7 @@
 ;; Timing variables are defined in `kanata.kbd` file.
 
 (defalias
+  mou (layer-toggle mousectl)
   cw (caps-word 2000)
 
   ;; This example is similar to the default caps-word behaviour but it moves the
@@ -35,8 +36,14 @@
   sym (one-shot-press $long_tap_timeout (layer-while-held symbols))
 
   ;; Shift mods
-  osm (tap-dance 2000 ( (one-shot-press 2000 lsft)
-                         @cwc) )
+  ;; osm (tap-dance $long_tap_timeout ( (one-shot-press 2000 lsft)
+  ;;                       @cwc) )
+  osm (tap-dance
+        $long_tap_timeout (
+          (one-shot-press $long_tap_timeout lsft)
+          (tap-hold-press $tap_timeout $hold_timeout @cwc @mou)
+        )
+      )
 
   ;; Home-row mods
   ss (tap-hold $tap_timeout $long_hold_timeout s lmet)
