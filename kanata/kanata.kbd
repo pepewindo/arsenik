@@ -55,8 +55,7 @@
 
 ;; (include deflayer/base.kbd)  ;; standard keyboard behavior
 ;; (include deflayer/base_lt.kbd)  ;; layer-taps on both thumb keys
-;; (include deflayer/base_lt_hrm.kbd)  ;; layer-taps + home-row mods
-(include deflayer/base_lt_hrm_ergol_azerty.kbd)  ;; layer-taps + home-row mods
+(include deflayer/base_lt_hrm.kbd)  ;; layer-taps + home-row mods
 
 ;; Note: not enabling layer-taps here makes the rest of the file useless.
 
@@ -67,15 +66,13 @@
 ;; (include deflayer/symbols_noop.kbd)  ;; AltGr stays as-is
 ;; (include deflayer/symbols_lafayette.kbd)  ;; AltGr programmation layer like Ergo‑L
 ;; (include deflayer/symbols_noop_num.kbd)  ;; AltGr stays as-is + NumRow layers
-;; (include deflayer/symbols_lafayette_num.kbd)  ;; AltGr prog layer + NumRow layers
-(include deflayer/symbols_lafayette_num_over_azerty.kbd)  ;; AltGr prog layer + NumRow layers
+(include deflayer/symbols_lafayette_num.kbd)  ;; AltGr prog layer + NumRow layers
 
 
 ;;-----------------------------------------------------------------------------
 ;; `Navigation` layer: ESDF or HJKL?
 
-;; (include deflayer/navigation.kbd)  ;; ESDF on the left, NumPad on the right
-(include deflayer/navigation_pepew.kbd)  ;; ESDF on the left, NumPad on the right
+(include deflayer/navigation.kbd)  ;; ESDF on the left, NumPad on the right
 ;; (include deflayer/navigation_vim.kbd)  ;; HJKL + NumPad on [Space]+[Q]
 
 ;; Replace XX by the keyboard shortcut of your application launcher, if any.

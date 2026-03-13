@@ -1,26 +1,121 @@
-;; Symbol layer: Lafayette/Ergo‑L AltGr programmation layer
-;; but enables a NumRow.
+;; Symbol layers: Lafayette/Ergo‑L AltGr programmation layer
+
+(defalias
+  num (layer-toggle numrow)
+)
+
+;; main symbols layer aliases
+(defalias
+
+  ;; subscript digits
+  ₁ (unicode ₁)
+  ₂ (unicode ₂)
+  ₃ (unicode ₃)
+  ₄ (unicode ₄)
+  ₅ (unicode ₅)
+  ₆ (unicode ₆)
+  ₇ (unicode ₇)
+  ₈ (unicode ₈)
+  ₉ (unicode ₉)
+  ₀ (unicode ₀)
+
+  ^ (unicode ^)
+  < (unicode <)
+  > (unicode >)
+  $ (unicode $)
+  % (unicode %)
+  @ (unicode @)
+  & (unicode &)
+  * (unicode *)
+  ' (unicode ')
+  ` (unicode `)
+
+  { (unicode {)
+  pl (unicode r#"("#)  ;; (
+  pr (unicode r#")"#)  ;; )
+  } (unicode })
+  = (unicode =)
+  \ (unicode \)
+  + (unicode +)
+  - (unicode -)
+  / (unicode /)
+  '' (unicode r#"""#)  ;; "
+
+  ~ (unicode ~)
+  [ (unicode [)
+  ] (unicode ])
+  _ (unicode _)
+  # (unicode #)
+  | (unicode |)
+  ! (unicode !)
+  ; (unicode ;)
+  : (unicode :)
+  ? (unicode ?)
+)
+
+;; shifted symbols layer aliases
+(defalias
+  ;; superscript digits
+  ¹ (unicode ¹)
+  ² (unicode ²)
+  ³ (unicode ³)
+  ⁴ (unicode ⁴)
+  ⁵ (unicode ⁵)
+  ⁶ (unicode ⁶)
+  ⁷ (unicode ⁷)
+  ⁸ (unicode ⁸)
+  ⁹ (unicode ⁹)
+  ⁰ (unicode ⁰)
+
+  ;; TODO: dead ^
+  ≤ (unicode ≤)
+  ≥ (unicode ≥)
+  ;; TODO: dead ¤
+  ;; TODO: dead ˚
+  × (unicode ×)
+  ;; TODO: dead '
+  ;; TODO: dead `
+
+  ;; TODO: dead ˇ
+  ;; TODO: dead ˙
+  ≠ (unicode ≠)
+  ;; TODO: dead /
+  ± (unicode ±)
+  ;; TODO: dead ˉ
+  ÷ (unicode ÷)
+  ;; TODO: dead ˝
+
+  ;; TODO: dead ~
+  ;; TODO: dead ,
+  ;; TODO: dead ˛
+  ¦ (unicode ¦)
+  ¬ (unicode ¬)
+  ;; TODO: dead ¸
+  ;; TODO: dead ˘
+)
+
+;; numrow layer layer aliases
+(defalias
+  ′ (unicode ′)
+  ″ (unicode ″)
+) 
 
 (deflayer symbols
-  AG-1 AG-2 AG-3 AG-4 AG-5 XX   AG-6 AG-7 AG-8 AG-9 AG-0
-  @^   @<   @>   @$   @%        @@   @&   @*   @'   @`
-  @{   @pl  @pr  @}   @=        @\   @+   @-   @/   @''
-  @~   @[   @]   @_   @#   XX   @|   @!   @;   @:   @?
-            @num          spc             _
+  @₁   @₂   @₃   @₄   @₅   @₆   @₇   @₈   @₉   @₀   XX   XX
+  @^   @<   @>   @$   @%   XX   @@   @&   @*   @'   @`
+  @{   @pl  @pr  @}   @=   XX   @\   @+   @-   @/   @''
+  @~   @[   @]   @_   @#   XX   XX   @|   @!   @;   @:   @?
+            @num           spc            ret       _    _
 )
 
 ;; Numrow layer
 
 (deflayer numrow
-  _    _    _    _    _     _   _    _    _    _    _
-  @s1  @s2  @s3  @s4  @s5       @s6  @s7  @s8  @s9  @s0
-  @1   @2   @3   @4   @5        @6   @7   @8   @9   @0
-  @dk1 @dk2 @dk3 @dk4 @dk5  _   XX   @-   @,   @.   @/
-            _              @nbs           @sym
-)
-
-(defalias
-  num (layer-toggle numrow)
+  @¹   @²   @³   @⁴   @⁵   @⁶   @⁷   @⁸   @⁹   @⁰   XX   XX
+  @€   @«   @»   @$   @%   XX   @^   @&   @*   @#   @@
+  @1   @2   @3   @4   @5   XX   @6   @7   @8   @9   @0
+  @°   @′   @″   h    @/   XX   XX   @.   @+   @-   @,   @:
+            _              spc            bspc      _    _
 )
 
 ;; vim: set ft=lisp
