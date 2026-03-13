@@ -33,7 +33,8 @@
 ;; (include defsrc/pc_wide_anglemod.kbd)  ;; PC, angle-mod + right hand shifted by one key
 ;; (include defsrc/mac_wide_anglemod.kbd)  ;; Mac, angle-mod + right hand shifted by one key
 
-(include defsrc/pc_anglemod_selenium.kbd)  ;; PC, ZXCVB are shifted to the left, 34 keys
+;; (include defsrc/pc_anglemod_selenium.kbd)  ;; PC, ZXCVB are shifted to the left, 34 keys
+(include defsrc/pc_ansi_anglemod_selenium.kbd)  ;; PC, ZXCVB are shifted to the left, 34 keys
 
 ;;-----------------------------------------------------------------------------
 ;; `Base` layer: standard or dual keys? (layer-taps, homerow mods?)
