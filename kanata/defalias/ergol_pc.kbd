@@ -77,11 +77,6 @@
   s9 S-9
   nbs S-spc ;; narrow no-break space
 
-;; following both 2 codes do not work on linux
-;; and cmd wtype not wanted
-  ′ (unicode ′)
-  ″ (unicode ″)
-
   1dk o
   ;; digits must be escaped, otherwise they’re interpreted as delays in ms
   dk0 (macro @1dk @0)
