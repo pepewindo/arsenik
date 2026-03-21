@@ -1,7 +1,9 @@
 ;; Symbol layers: Lafayette/Ergo‑L AltGr programmation layer
 
 (defalias
-  num (layer-toggle numrow)
+  num  (layer-toggle numrow)
+  numl (layer-switch numlock)
+  base (layer-switch base)
 )
 
 ;; main symbols layer aliases
@@ -114,8 +116,16 @@
   @¹   @²   @³   @⁴   @⁵   @⁶   @⁷   @⁸   @⁹   @⁰   XX   XX
   @€   @«   @»   @$   @%   XX   @^   @&   @*   @#   @@
   @1   @2   @3   @4   @5   XX   @6   @7   @8   @9   @0
-  @°   @′   @″   h    @/   XX   XX   @.   @+   @-   @,   @:
+  @°   @′   @″   h    @/  @numl XX   @.   @+   @-   @,   @:
             _             @nbs            bspc      _    _
+)
+
+(deflayer numlock
+  @¹   @²   @³   @⁴   @⁵   @⁶   @⁷   @⁸   @⁹   @⁰   XX   XX
+  @€   @«   @»   @$   @%   XX   @^   @&   @*   @#   @@
+  @1   @2   @3   @4   @5   XX   @6   @7   @8   @9   @0
+  @°   @′   @″   h    @/   XX   XX   @.   @+   @-   @,   @:
+            bspc           @nav           @sym     @base @base
 )
 
 ;; vim: set ft=lisp
