@@ -17,7 +17,7 @@
 (deflayer navigation
   M-1   M-2   M-3   M-4   M-5   M-6   M-7   M-8   M-9   XX    XX   lrld
   caps  home  up    end   pgup  XX    @-    @b7   @b8   @b9   @*
-  tab   lft   down  rght  pgdn  XX    @+    @b4   @b5   @b6   @b0
+  tab   lft   down  rght  pgdn  XX    @+    @b4   @b5   @b6   @b00
   bck   prtsc esc   ins   fwd   XX    XX    @.    @b1   @b2   @b3   @,
               @func             _                 del   @/    @/
 )
@@ -40,6 +40,7 @@
 
 
 (defalias
+  b00  (tap-hold $tap_timeout $long_hold_timeout @b0 lsft)
   func (layer-toggle funckeys)
   kz- C-S-kp- ;; kitty zoom out
   kz+ C-S-=   ;; kitty zoom in
