@@ -1,5 +1,5 @@
 (defchordsv2
-  (w   e)  esc 10 first-release ()
+  (z   x)  esc 20 first-release ()
   (o   p)  ret 20 first-release ()
 )
 
