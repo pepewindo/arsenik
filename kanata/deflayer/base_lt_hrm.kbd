@@ -150,16 +150,18 @@
 
 
 (defchordsv2
-	(w     e)  esc 10 first-release ()
-	(o     p)  ret 20 first-release ()
+	(z     x)  esc   20 first-release ()
+	(o     p)  ret   20 first-release ()
+	(x  lalt)  @func 20 all-released ()
+	(,  ralt)  @mou  20 all-released ()
 )
 
 (deflayer base
-  @b1   @b2   @b3   @b4   @b5   @b6   @b7   @b8   @b9   @b0   @slsh C-bspc
+  @b1   @b2   @b3   @b4   @b5   @b6   @b7   @b8   @b9   @b0   @slsh bspc
   a     c     o     p     z     volu  j     ;     d     @dk   y
   q     @s    @e    @n    f     vold  l     @r    @t    @i    @u
-  w     x     @dash v     b     @slsh mute  @dot  h     g     @com  k
-              @sft              @nav              @sym        @sf1  @sf1
+  w     x     @dash v     b     bspc  mute  @dot  h     g     @com  k
+              @sf1              @nav              @sym
 )
 
 
@@ -170,7 +172,7 @@
   @Â    @Ç    @Œ    @Ô    _     _     _     @µ    @_dk  @dk   @Û
   @À    @É    @È    @Ê    @Ñ    _     @lpar @rpar @Î    @Ï    @Ù
   @Æ    @ẞ    @¿    @–    @—    _     _     @…    XX    XX    @•    XX
-              @sft1             @smark            _           _     _
+              @sft1             @smark            _
 )
 
 (deflayer dk2
@@ -178,7 +180,7 @@
   a     c     @Ö    p     @Ẅ    _     j     ;     d     @dk   @Ÿ
   @Ä    s     @Ë    n     f     _     l     r     @ẗ    @Ï    @Ü
   z     @Ẍ    @-    v     b     _     _     @.    @Ḧ    g     m     k
-              @sft2             @mark             _           _     _
+              @sft2             @mark             _
 )
 
 (deflayer dk3
@@ -186,7 +188,7 @@
   @🙊   @😎   @😲   @👍   @🤞   _     @😉   @🙏   @⚠    @dk   @😢
   @😱   @⇐    @⇔    @⇒    @≠    _     @😂   @🚀   @👍   @∩    @∪
   @≃    @⭠    @⮂    @⭢    @∅    _     _     @👋   @¼    @½    @¾    @☕
-              @sft3             @diaeresis        _           _     _
+              @sft3             @diaeresis        _
 )
 
 
