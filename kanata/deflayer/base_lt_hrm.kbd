@@ -149,18 +149,12 @@
 )
 
 
-(defchordsv2
-	(z     x)  esc   20 first-release ()
-	(o     p)  ret   20 first-release ()
-	(x  lalt)  @func 20 all-released ()
-	(,  ralt)  @mou  20 all-released ()
-)
 
 (deflayer base
-  @b1   @b2   @b3   @b4   @b5   @b6   @b7   @b8   @b9   @b0   @slsh bspc
-  a     c     o     p     z     volu  j     ;     d     @dk   y
-  q     @s    @e    @n    f     vold  l     @r    @t    @i    @u
-  w     x     @dash v     b     bspc  mute  @dot  h     g     @com  k
+  @b1   @b2   @b3   @b4   @b5   @b6   @b7   @b8   @b9   @b0   bspc
+  a     c     o     p     z           j     ;     d     @dk   y
+  q     @s    @e    @n    f           l     @r    @t    @i    @u
+  w     x     @dash v     b     bspc  @dot  h     g     @com  k
               @sf1              @nav              @sym
 )
 
@@ -168,26 +162,26 @@
 ;; Deadkey layers:
 
 (deflayer dk1
-  @„    @“    @”    @¢    @‰    _     _     @§    @¶    @°    _     _
-  @Â    @Ç    @Œ    @Ô    _     _     _     @µ    @_dk  @dk   @Û
-  @À    @É    @È    @Ê    @Ñ    _     @lpar @rpar @Î    @Ï    @Ù
-  @Æ    @ẞ    @¿    @–    @—    _     _     @…    XX    XX    @•    XX
+  @„    @“    @”    @¢    @‰    _     _     @§    @¶    @°    _
+  @Â    @Ç    @Œ    @Ô    _           _     @µ    @_dk  @dk   @Û
+  @À    @É    @È    @Ê    @Ñ          @lpar @rpar @Î    @Ï    @Ù
+  @Æ    @ẞ    @¿    @–    @—    _     @…    XX    XX    @•    XX
               @sft1             @smark            _
 )
 
 (deflayer dk2
-  _     _     _     _     _     _     _     _     _     _     _     _
-  a     c     @Ö    p     @Ẅ    _     j     ;     d     @dk   @Ÿ
-  @Ä    s     @Ë    n     f     _     l     r     @ẗ    @Ï    @Ü
-  z     @Ẍ    @-    v     b     _     _     @.    @Ḧ    g     m     k
+  _     _     _     _     _     _     _     _     _     _     _
+  a     c     @Ö    p     @Ẅ          j     ;     d     @dk   @Ÿ
+  @Ä    s     @Ë    n     f           l     r     @ẗ    @Ï    @Ü
+  z     @Ẍ    @-    v     b     _     @.    @Ḧ    g     m     k
               @sft2             @mark             _
 )
 
 (deflayer dk3
-  _     _     _     _     _     _     _     _     _     _     _     _
-  @🙊   @😎   @😲   @👍   @🤞   _     @😉   @🙏   @⚠    @dk   @😢
-  @😱   @⇐    @⇔    @⇒    @≠    _     @😂   @🚀   @👍   @∩    @∪
-  @≃    @⭠    @⮂    @⭢    @∅    _     _     @👋   @¼    @½    @¾    @☕
+  _     _     _     _     _     _     _     _     _     _     _
+  @🙊   @😎   @😲   @👍   @🤞         @😉   @🙏   @⚠    @dk   @😢
+  @😱   @⇐    @⇔    @⇒    @≠          @😂   @🚀   @👍   @∩    @∪
+  @≃    @⭠    @⮂    @⭢    @∅    _     @👋   @¼    @½    @¾    @☕
               @sft3             @diaeresis        _
 )
 
