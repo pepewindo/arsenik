@@ -13,9 +13,9 @@
 (defchordsv2
 	(z     x)  esc   20 first-release ()
 	(x  lalt)  @func 20 all-released ()
-	;; following are right anglemod specific
+	(,  ralt)  @mou  20 all-released ()
+	;; following is right anglemod specific
 	(o     p)  ret   20 first-release ()
-	(;  ralt)  @mou  20 all-released ()
 )
 
 ;; vim: set ft=lisp
