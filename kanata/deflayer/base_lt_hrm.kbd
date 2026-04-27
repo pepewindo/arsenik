@@ -154,7 +154,7 @@
   @b1   @b2   @b3   @b4   @b5   @b6   @b7   @b8   @b9   @b0   bspc
   a     c     o     p     z           j     ;     d     @dk   y
   q     @s    @e    @n    f           l     @r    @t    @i    @u
-  w     x     @dash v     b     bspc  @dot  h     g     @com  k
+  w     x     @dash v     b    C-bspc @dot  h     g     @com  k
               @sf1              @nav              @sym
 )
 
@@ -189,7 +189,7 @@
 ;; Timing variables are defined in `kanata.kbd` file.
 
 (defalias
-  mou (layer-toggle mousectl)
+  mou (layer-switch mousectl)
   cw  (caps-word 2000)
   cwc (caps-word-custom
        2000

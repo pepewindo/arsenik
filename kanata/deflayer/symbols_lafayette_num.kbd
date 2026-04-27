@@ -113,23 +113,24 @@
 ;; Numrow layer
 
 (deflayer numrow
-  @¹   @²   @³   @⁴   @⁵   @⁶   @⁷   @⁸   @⁹   @⁰   XX
+  @¹   @²   @³   @⁴   @⁵   @⁶   @⁷   @⁸   @⁹   @⁰   bspc
   @€   @«   @»   @$   @%        @^   @&   @*   @#   @@
   @1   @2   @3   @4   @5        @6   @7   @8   @9   @0
-  @°   @′   @″   h    @/  @numl @.   @+   @-   @,   @:
+  @°   @″   @′   h    @/  @numl @.   @+   @-   @,   @:
             _             @nbs            bspc
 )
 
 (deflayer numlock
-  @¹   @²   @³   @⁴   @⁵   @⁶   @⁷   @⁸   @⁹   @⁰   XX
+  @¹   @²   @³   @⁴   @⁵   @⁶   @⁷   @⁸   @⁹   @⁰   bspc
   @€   @«   @»   @$   @%        @^   @&   @*   @#   @@
-  @1   @2   @3   @4   @5        @6   @7   @8   @9   @00
-  @°   @′   @″   h    @/   bspc @.   @+   @-   @,   @:
+  @1   @2   @3   @4   @5        @6   @7   @c8   @9   @s0
+  @ndo @cpy @cut @pst @/   bspc @.   @+   @-   @,   @:
             @base          @nav           @sym
 )
 
 (defalias
-  00 (tap-hold $tap_timeout $long_hold_timeout @0 rsft)
+  s0 (tap-hold $tap_timeout $long_hold_timeout @0 rsft)
+  c8 (tap-hold $tap_timeout $long_hold_timeout @8 rctl)
 )
 
 ;; vim: set ft=lisp

@@ -16,25 +16,25 @@
 )
 
 (deflayer funckeys
-  _     _     _     _     _     _     _     _     _     _     lrld
-  @ndo  @cpy  @cut  @pst  _           XX    F7    F8    F9    F10
+  _     _     _     _     _     _     _     _     _     _     bspc
+  @ndo  vold  mute  volu  _           XX    F7    F8    F9    F10
   lsft  lmet  lctl  lalt  @kz+        XX    F4    F5    F6    F11
-  _     vold  mute  volu  @kz-  XX    XX    F1    F2    F3    F12
+  _     @cpy  @cut  @pst  @kz-  XX    XX    F1    F2    F3    F12
               _                 _                 @mou
 )
 
 (deflayer mousectl
-  _     _     _     _     _     _     _     _     _     _     lrld
-  XX    XX    @mwu  XX    XX          XX    mltp  @mau  mrtp  XX
-  XX    @slw  @med  @fst  XX          XX    @mal  @mad  @mar  mlft
+  _     _     _     _     _     _     _     _     _     _     bspc
+  XX    lalt  @mwu  S-tab tab         XX    mltp  @mau  mrtp  XX
+  @base @slw  @med  @fst  XX          XX    @mal  @mad  @mar  mlft
   XX    @mwl  @mwd  @mwr  XX    XX    XX    mltp  mmtp  mrtp XX
-              _                 mlft              _
+              @base             mlft              _
 )
 
 
 (defalias
   b00  (tap-hold $tap_timeout $long_hold_timeout @b0 lsft)
-  func (layer-toggle funckeys)
+  func (one-shot 1000 (layer-toggle funckeys))
   kz- C-S-kp- ;; kitty zoom out
   kz+ C-S-=   ;; kitty zoom in
 
