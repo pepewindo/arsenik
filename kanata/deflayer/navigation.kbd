@@ -9,7 +9,7 @@
 
 (deflayer navigation
   M-1   M-2   M-3   M-4   M-5   M-6   M-7   M-8   M-9   XX    lrld
-  caps  home  up    end   pgup        @-    @b7   @b8   @b9   @*
+  @mou  home  up    end   pgup        @-    @b7   @b8   @b9   @*
   tab   lft   down  rght  pgdn        @+    @b4   @b5   @b6   @b00
   bck   prtsc esc   ins   fwd   XX    @.    @b1   @b2   @b3   @,
               C-bspc            _                 del
@@ -20,15 +20,15 @@
   @ndo  vold  mute  volu  _           XX    F7    F8    F9    F10
   lsft  lmet  lctl  lalt  @kz+        XX    F4    F5    F6    F11
   _     @cpy  @cut  @pst  @kz-  XX    XX    F1    F2    F3    F12
-              _                 _                 @mou
+              _                 _                 _
 )
 
 (deflayer mousectl
   _     _     _     _     _     _     _     _     _     _     bspc
   XX    lalt  @mwu  S-tab tab         XX    mltp  @mau  mrtp  XX
-  @base @slw  @med  @fst  XX          XX    @mal  @mad  @mar  mlft
+  @base @slw  @med  @fst  mlft        XX    @mal  @mad  @mar  mlft
   XX    @mwl  @mwd  @mwr  XX    XX    XX    mltp  mmtp  mrtp XX
-              @base             mlft              _
+              bspc              mlft              _
 )
 
 

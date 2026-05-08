@@ -13,7 +13,6 @@
 (defchordsv2
 	(z     x)  esc   20 first-release ()
 	(x  lalt)  @func 20 all-released ()
-	(,  ralt)  @mou  20 all-released ()
 	;; following is right anglemod specific
 	(o     p)  ret   20 first-release ()
 )
