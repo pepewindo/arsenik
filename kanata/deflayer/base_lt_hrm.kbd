@@ -5,17 +5,17 @@
 
 ;; Base layer: layer-taps under the thumbs + home-row mods on SDF and JKL
 (deflayer base
-  _    _    _    _    _ C-bspc  _    _    _    _    _
-  q    w    e    r    t         y    u    i    o    p
-  a    @ss  @dd  @ff  g         h    @jj  @kk  @ll  @sh
-  z    x    c    v    b    <    n    m    ,    .    /
-            @sft          @nav       @sym @osm @osm
+  _    _    _    _    _  bspc  _    _    _    _    _
+  q    w    e    r    t        y    u    i    o    p
+  a    @ss  @dd  @ff  g        h    @jj  @kk  @ll  @sh
+  z    x    c    v    b C-bspc n    m    ,    .    /
+            @osm         @nav      @sym
 )
 
 ;; Timing variables are defined in `kanata.kbd` file.
 
 (defalias
-  mou (layer-toggle mousectl)
+  mou (layer-switch mousectl)
   cw (caps-word 2000)
 
   ;; This example is similar to the default caps-word behaviour but it moves the
