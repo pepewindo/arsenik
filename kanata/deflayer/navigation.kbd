@@ -23,11 +23,11 @@
 )
 
 (deflayer mousectl
-  _     _    _    _    _   lrld  _    _    _    _    _
-  XX    XX   @mwu XX   XX        XX   mltp @mau mrtp XX
-  @base @slw @med @fst mlft      XX   @mal @mad @mar mlft
-  XX    @mwl @mwd @mwr XX   _    XX   mltp mmtp mrtp XX
-             bspc          mlft       @base
+  _     _     _     _     _   lrld  _    _    _    _    _
+  XX    lalt  @mwu  S-tab tab       XX   mltp @mau mrtp XX
+  @base @slw  @med  @fst  mlft      XX   @mal @mad @mar mlft
+  XX    @mwl  @mwd  @mwr  XX   _    XX   mltp mmtp mrtp XX
+              bspc            mlft       @base
 )
 
 (defalias
