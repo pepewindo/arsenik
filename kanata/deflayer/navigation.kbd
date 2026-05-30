@@ -24,9 +24,9 @@
 
 (deflayer mousectl
   _     _     _     _     _   lrld  _    _    _    _    _
-  XX    lalt  @mwu  S-tab tab       XX   mltp @mau mrtp XX
-  @base @slw  @med  @fst  mlft      XX   @mal @mad @mar mlft
-  XX    @mwl  @mwd  @mwr  XX   _    XX   mltp mmtp mrtp XX
+  XX    lalt  @mwu  S-tab tab       @cut mltp @mau mrtp XX
+  @base @slw  @med  @fst  mlft      @cpy @mal @mad @mar mlft
+  @ndo  @mwl  @mwd  @mwr  XX   _    @pst mltp mmtp mrtp XX
               bspc            mlft       @base
 )
 

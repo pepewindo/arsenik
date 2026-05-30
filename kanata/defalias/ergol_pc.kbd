@@ -8,8 +8,10 @@
   cls C-t
   ndo C-z
   cut C-x
-  cpy C-w
-  pst C-v
+  ;; cpy C-w
+  ;; pst C-v
+  cpy C-ins
+  pst S-ins
 
   0 0
   1 1
