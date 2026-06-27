@@ -1,6 +1,7 @@
 (defchordsv2
   (z   x)  esc 20 first-release ()
   (o   p)  ret 20 first-release ()
+;;  (i   o)  ret 20 first-release () ;; for simple angle-mod
 )
 
 ;; Base layer: layer-taps under the thumbs + home-row mods on SDF and JKL

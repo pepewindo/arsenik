@@ -24,14 +24,15 @@
 
 (deflayer mousectl
   _     _     _     _     _   lrld  _    _    _    _    _
-  XX    lalt  @mwu  S-tab tab       @cut mltp @mau mrtp XX
+  @ndo  lalt  @mwu  S-tab tab       @cut mltp @mau mrtp XX
   @base @slw  @med  @fst  mlft      @cpy @mal @mad @mar @base
-  @ndo  @mwl  @mwd  @mwr  XX   _    @pst mltp mmtp mrtp XX
-              bspc            mlft       del
+  bck   @mwl  @mwd  @mwr  fwd  _    @pst mltp mmtp mrtp XX
+              bspc            @nav       del
 )
 
 (defalias
-	func (layer-toggle funckeys)
+	;; func (layer-toggle funckeys)
+	func (tap-hold $tap_timeout $long_hold_timeout bspc (layer-while-held funckeys))
 	kz- C-S-kp- ;; kitty zoom out
 	kz+ C-S-=   ;; kitty zoom in
 
