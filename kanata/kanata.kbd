@@ -45,8 +45,8 @@
 ;; (include defsrc/mac.kbd)  ;; Mac, standard finger assignment
 ;; (include defsrc/pc_anglemod.kbd)  ;; PC, ZXCVB are shifted to the left
 ;; (include defsrc/mac_anglemod.kbd)  ;; Mac, ZXCVB are shifted to the left
-;; (include defsrc/pc_wide_anglemod.kbd)  ;; PC, angle-mod + right hand shifted by one key
-(include defsrc/pc_ansi_wide_anglemod.kbd)  ;; PC, angle-mod + right hand shifted by one key
+(include defsrc/pc_wide_anglemod.kbd)  ;; PC, angle-mod + right hand shifted by one key
+;; (include defsrc/pc_ansi_wide_anglemod.kbd)  ;; PC, angle-mod + right hand shifted by one key
 ;; (include defsrc/mac_wide_anglemod.kbd)  ;; Mac, angle-mod + right hand shifted by one key
 
 
@@ -59,6 +59,15 @@
 (include deflayer/base_lt_hrm.kbd)  ;; layer-taps + home-row mods
 
 ;; Note: not enabling layer-taps here makes the rest of the file useless.
+
+
+;;-----------------------------------------------------------------------------
+;; `NumLock` Layer
+;;-----------------------------------------------------------------------------
+;; Enabled by Nav+[P], disabled by [P] or Sym.
+;; Almost identical to `numpad` layer below, but locked, and without any layer-tap.
+
+(include deflayer/numlock.kbd)
 
 
 ;;-----------------------------------------------------------------------------

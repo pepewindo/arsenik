@@ -8,7 +8,7 @@
 
 (deflayer navigation
   M-1  M-2  M-3  M-4  M-5  lrld M-6  M-7  M-8  M-9  XX
-  @mou home up   end  pgup      kp-  @7   @8   @9   @*
+  @mou home up   end  pgup      kp-  @7   @8   @9   @lck
   tab  lft  down rght pgdn      kp+  @4   @5   @6   @0
   bck  prtsc esc ins  fwd   XX  @.   @1   @2   @3   @,
             @func           _        del
@@ -24,8 +24,8 @@
 
 (deflayer mousectl
   _     _     _     _     _   lrld  _    _    _    _    _
-  @ndo  lalt  @mwu  S-tab tab       @cut mltp @mau mrtp XX
-  @base @slw  @med  @fst  mlft      @cpy @mal @mad @mar @base
+  @std  lalt  @mwu  S-tab tab       @cut mltp @mau mrtp @lck
+  @ndo  @slw  @med  @fst  mlft      @cpy @mal @mad @mar mlft
   bck   @mwl  @mwd  @mwr  fwd  _    @pst mltp mmtp mrtp XX
               bspc            @nav       del
 )
