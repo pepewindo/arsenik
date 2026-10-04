@@ -16,7 +16,7 @@
   ;; The key must be pressed twice in 200ms to enable repetitions.
   tap_timeout 200
   ;; The key must be pressed twice in 500ms to enable repetitions.
-  long_tap_timeout 1000
+  long_tap_timeout 500
   ;; The key must be held 200ms to become a layer shift.
   hold_timeout 200
   ;; Slightly higher value for typing keys, to prevent unexpected hold effect.
@@ -46,6 +46,7 @@
 ;; (include defsrc/pc_anglemod.kbd)  ;; PC, ZXCVB are shifted to the left
 ;; (include defsrc/mac_anglemod.kbd)  ;; Mac, ZXCVB are shifted to the left
 (include defsrc/pc_wide_anglemod.kbd)  ;; PC, angle-mod + right hand shifted by one key
+;; (include defsrc/pc_ansi_wide_anglemod.kbd)  ;; PC, angle-mod + right hand shifted by one key
 ;; (include defsrc/mac_wide_anglemod.kbd)  ;; Mac, angle-mod + right hand shifted by one key
 
 
@@ -58,6 +59,15 @@
 (include deflayer/base_lt_hrm.kbd)  ;; layer-taps + home-row mods
 
 ;; Note: not enabling layer-taps here makes the rest of the file useless.
+
+
+;;-----------------------------------------------------------------------------
+;; `NumLock` Layer
+;;-----------------------------------------------------------------------------
+;; Enabled by Nav+[P], disabled by [P] or Sym.
+;; Almost identical to `numpad` layer below, but locked, and without any layer-tap.
+
+(include deflayer/numlock.kbd)
 
 
 ;;-----------------------------------------------------------------------------
@@ -92,6 +102,7 @@
   process-unmapped-keys yes
   windows-altgr cancel-lctl-press
   concurrent-tap-hold yes
+  chords-v2-min-idle 200
 )
 
 ;; vim: set ft=lisp

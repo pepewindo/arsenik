@@ -1,9 +1,7 @@
 ;; Symbol layers: Lafayette/Ergo‑L AltGr programmation layer
 
 (defalias
-  num  (layer-toggle numrow)
-  numl (layer-switch numlock)
-  base (layer-switch base)
+  nsc  (tap-hold-press $tap_timeout $hold_timeout esc (layer-while-held numrow))
 )
 
 ;; main symbols layer aliases
@@ -107,7 +105,7 @@
   @^   @<   @>   @$   @%        @@   @&   @*   @'   @`
   @{   @pl  @pr  @}   @=        @\   @+   @-   @/   @''
   @~   @[   @]   @_   @#   XX   @|   @!   @;   @:   @?
-            @num           spc            ret
+            @nsc           spc            ret
 )
 
 ;; Numrow layer
@@ -116,21 +114,8 @@
   @¹   @²   @³   @⁴   @⁵   @⁶   @⁷   @⁸   @⁹   @⁰   bspc
   @€   @«   @»   @$   @%        @^   @&   @*   @#   @@
   @1   @2   @3   @4   @5        @6   @7   @8   @9   @0
-  @°   @″   @′   h    @/  @numl @.   @+   @-   @,   @:
-            _             @nbs            bspc
-)
-
-(deflayer numlock
-  @¹   @²   @³   @⁴   @⁵   @⁶   @⁷   @⁸   @⁹   @⁰   bspc
-  @€   @«   @»   @$   @%        @^   @&   @*   @#   @@
-  @1   @2   @3   @4   @5        @6   @7   @c8   @9   @s0
-  @ndo @cpy @cut @pst @/   bspc @.   @+   @-   @,   @:
-            @base          @nav           @sym
-)
-
-(defalias
-  s0 (tap-hold $tap_timeout $long_hold_timeout @0 rsft)
-  c8 (tap-hold $tap_timeout $long_hold_timeout @8 rctl)
+  @°   @″   @′   h    @/   XX   @.   @+   @-   @,   @:
+            _              @nbs           bspc
 )
 
 ;; vim: set ft=lisp
