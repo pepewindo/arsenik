@@ -102,6 +102,7 @@
   windows-altgr cancel-lctl-press
   concurrent-tap-hold yes
   chords-v2-min-idle 200
+  linux-dev-names-exclude ("Boardsource boardsource/unicorne")
 )
 
 ;; vim: set ft=lisp
